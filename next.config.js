@@ -6,6 +6,9 @@ const withNextIntl = createNextIntlPlugin();
 const nextConfig = {
   poweredByHeader: false, // Remove the X-Powered-By header
   reactStrictMode: true,
+  // Improve static generation
+  staticPageGenerationTimeout: 180, // Increase timeout for static page generation (in seconds)
+  output: 'standalone', // Optimize for production deployment
   images: {
     domains: [
       'www.revisepdf.com',
