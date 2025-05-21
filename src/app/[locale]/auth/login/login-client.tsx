@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense } from "react";
 import Link from "next/link";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { signIn } from "next-auth/react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -11,22 +11,17 @@ import { Label } from "@/components/ui/label";
 import { AlertCircle, CheckCircle2 } from "lucide-react";
 import { useMockSession } from "@/providers/auth-provider";
 
-interface LoginClientProps {
-  locale: string;
-}
-
-export default function LoginClient({ locale }: LoginClientProps) {
-  const router = useRouter();
+// Separate component that uses useSearchParams
+function LoginWithSearchParams({
+  setError,
+  setSuccess
+}: {
+  setError: (error: string) => void,
+  setSuccess: (success: string) => void
+}) {
+  // Import useSearchParams inside the component
+  const { useSearchParams } = require("next/navigation");
   const searchParams = useSearchParams();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-  const [success, setSuccess] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
-
-  // Always call hooks at the top level, regardless of condition
-  const mockSession = useMockSession();
-  const isDemoMode = process.env.NEXTAUTH_DEMO_MODE === "true";
 
   // Check for success messages from URL parameters
   useEffect(() => {
@@ -40,7 +35,26 @@ export default function LoginClient({ locale }: LoginClientProps) {
     if (reset === "true") {
       setSuccess("Your password has been reset. You can now log in with your new password.");
     }
-  }, [searchParams]);
+  }, [searchParams, setSuccess]);
+
+  return null; // This component doesn't render anything
+}
+
+interface LoginClientProps {
+  locale: string;
+}
+
+export default function LoginClient({ locale }: LoginClientProps) {
+  const router = useRouter();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+
+  // Always call hooks at the top level, regardless of condition
+  const mockSession = useMockSession();
+  const isDemoMode = process.env.NEXTAUTH_DEMO_MODE === "true";
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -116,6 +130,11 @@ export default function LoginClient({ locale }: LoginClientProps) {
 
   return (
     <div className="container py-6 sm:py-10 flex justify-center px-4">
+      {/* Wrap the component that uses useSearchParams in Suspense */}
+      <Suspense fallback={null}>
+        <LoginWithSearchParams setError={setError} setSuccess={setSuccess} />
+      </Suspense>
+
       <Card className="w-full max-w-md">
         <CardHeader className="space-y-1 pb-2 sm:pb-4">
           <CardTitle className="text-xl sm:text-2xl font-bold text-center">
