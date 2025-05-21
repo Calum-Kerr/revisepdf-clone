@@ -8,7 +8,7 @@ const nextConfig = {
   reactStrictMode: true,
   // Improve static generation
   staticPageGenerationTimeout: 180, // Increase timeout for static page generation (in seconds)
-  output: 'standalone', // Optimize for production deployment
+  // Remove standalone output for Heroku compatibility
   experimental: {
     // Improve static generation with suspense
     missingSuspenseWithCSRBailout: false,

@@ -13,4 +13,13 @@ npm install
 echo "Building the application..."
 npm run build
 
+# Verify build artifacts
+echo "Verifying build artifacts..."
+if [ -f ".next/prerender-manifest.json" ]; then
+  echo "Prerender manifest found at .next/prerender-manifest.json"
+else
+  echo "WARNING: Prerender manifest not found at .next/prerender-manifest.json"
+  ls -la .next/
+fi
+
 echo "Build process completed successfully!"
