@@ -1,0 +1,231 @@
+{
+  "seo": {
+    "title": "RevisePDF - Outils PDF gratuits pour éditer, convertir et optimiser",
+    "description": "RevisePDF propose plus de 20 outils PDF gratuits pour compresser, convertir, éditer, fusionner, diviser, ajouter l'OCR, des filigranes et optimiser vos fichiers PDF. Aucune installation requise."
+  },
+  "navigation": {
+    "all_pdf_tools": "Tous les outils PDF",
+    "optimise": "Optimiser",
+    "convert_to_pdf": "Convertir en PDF",
+    "convert_from_pdf": "Convertir depuis PDF",
+    "edit": "Éditer",
+    "organise": "Organiser",
+    "security": "Sécurité",
+    "login": "Connexion",
+    "register": "S'inscrire",
+    "languages": "Langues",
+    "regional": "Régional",
+    "language_selector": "Sélectionner la langue"
+  },
+  "hero": {
+    "title": "La boîte à outils PDF ultime pour tous vos besoins",
+    "subtitle": "Optimisez, Convertissez, Éditez, Organisez et Plus - Tous vos besoins PDF au même endroit."
+  },
+  "tools": {
+    "section_title": "Tous les outils PDF",
+    "optimise": {
+      "title": "Optimiser",
+      "description": "Compresser, réparer et OCR pour vos PDF"
+    },
+    "convert_to_pdf": {
+      "title": "Convertir en PDF",
+      "description": "Images, documents Office, HTML en PDF"
+    },
+    "edit": {
+      "title": "Éditer",
+      "description": "Ajouter des numéros de page, filigranes, éditer le contenu"
+    },
+    "organise": {
+      "title": "Organiser",
+      "description": "Fusionner, diviser, extraire et pivoter les pages"
+    },
+    "convert_from_pdf": {
+      "title": "Convertir depuis PDF",
+      "description": "PDF en images, vues panoramiques, PDF/A"
+    },
+    "security": {
+      "title": "Sécurité",
+      "description": "Déverrouiller, protéger, rédiger et aplanir les PDF"
+    }
+  },
+  "benefits": {
+    "title": "Pourquoi choisir RevisePDF",
+    "items": [
+      {
+        "title": "Gratuit & Rapide",
+        "description": "Tous les outils sont entièrement gratuits et optimisés pour la vitesse."
+      },
+      {
+        "title": "Sécurisé & Privé",
+        "description": "Vos fichiers sont traités en toute sécurité et supprimés après traitement."
+      },
+      {
+        "title": "Accessible partout",
+        "description": "Accédez à nos outils depuis n'importe quel appareil avec une connexion internet."
+      }
+    ]
+  },
+  "faq": {
+    "title": "Questions fréquemment posées",
+    "items": [
+      {
+        "question": "Quels outils PDF RevisePDF propose-t-il ?",
+        "answer": "RevisePDF propose plus de 20 outils PDF gratuits, y compris la compression, la conversion (vers et depuis PDF), l'édition (contenu, texte, filigranes, numéros de page), l'organisation (fusion, division, extraction, rotation) et les fonctionnalités de sécurité (chiffrement, déchiffrement, rédaction, aplatissement). Tous les outils sont gratuits et ne nécessitent aucune installation de logiciel."
+      },
+      {
+        "question": "RevisePDF est-il complètement gratuit ?",
+        "answer": "Oui, RevisePDF est actuellement en mode bêta avec toutes les fonctionnalités disponibles gratuitement. Nous prévoyons d'implémenter un modèle d'abonnement à l'avenir pour des tailles de fichiers plus importantes, mais nous maintiendrons toujours un niveau gratuit avec des limites généreuses pour les besoins de base de traitement PDF."
+      },
+      {
+        "question": "Dans quelle mesure RevisePDF est-il sécurisé pour traiter mes fichiers PDF ?",
+        "answer": "RevisePDF prend la sécurité au sérieux. Tous les transferts de fichiers sont chiffrés à l'aide de HTTPS/TLS, et vos fichiers sont automatiquement supprimés après traitement ou après une courte période (généralement 24 heures). Nous ne partageons jamais vos fichiers avec des tiers, et notre traitement se déroule sur des serveurs sécurisés avec des contrôles d'accès stricts."
+      },
+      {
+        "question": "Ai-je besoin de créer un compte pour utiliser RevisePDF ?",
+        "answer": "Non, vous pouvez utiliser la plupart des outils de RevisePDF sans créer de compte. Cependant, créer un compte gratuit vous donne des avantages comme des limites de taille de fichier plus élevées, la possibilité de sauvegarder votre historique de traitement et l'accès aux fonctionnalités premium lorsqu'elles deviennent disponibles."
+      },
+      {
+        "question": "Qu'est-ce que l'OCR et pourquoi en aurais-je besoin pour mes PDF ?",
+        "answer": "L'OCR (Reconnaissance Optique de Caractères) est une technologie qui convertit les documents numérisés ou les images contenant du texte en fichiers PDF consultables et modifiables. Si vous avez des documents numérisés, l'utilisation de l'OCR vous permet de rechercher du texte dans le document, d'en copier du texte et de rendre le document plus accessible pour les lecteurs d'écran et autres technologies d'assistance."
+      }
+    ]
+  },
+  "compress": {
+    "title": "Compresser PDF",
+    "description": "Réduisez la taille de votre PDF pour un partage plus facile, tout en maintenant une qualité acceptable.",
+    "button": "Compresser PDF",
+    "drag_drop": "Glissez et déposez votre fichier ici ou cliquez pour parcourir",
+    "max_size": "Taille de fichier maximale : {size}MB",
+    "options_title": "Options de compression",
+    "levels": {
+      "screen": {
+        "title": "Écran",
+        "description": "Faible qualité, plus petite taille de fichier",
+        "reduction": "70-90% de réduction"
+      },
+      "ebook": {
+        "title": "eBook",
+        "description": "Qualité moyenne, bonne taille de fichier",
+        "reduction": "50-70% de réduction"
+      },
+      "printer": {
+        "title": "Imprimante",
+        "description": "Haute qualité, plus grande taille de fichier",
+        "reduction": "30-50% de réduction"
+      },
+      "prepress": {
+        "title": "Prépresse",
+        "description": "Haute qualité avec préservation des couleurs",
+        "reduction": "20-40% de réduction"
+      },
+      "default": {
+        "title": "Par défaut",
+        "description": "Paramètres de compression standard",
+        "reduction": "40-60% de réduction"
+      }
+    },
+    "about": {
+      "title": "À propos de la compression PDF",
+      "description": "La compression PDF réduit la taille de vos documents PDF tout en maintenant une qualité acceptable. C'est utile pour partager des documents par e-mail, les télécharger sur des sites web ou économiser de l'espace de stockage.",
+      "how_works": {
+        "title": "Comment ça fonctionne",
+        "description": "Notre outil de compression utilise un moteur de traitement PDF de haute qualité pour optimiser vos fichiers PDF. Il fonctionne en :",
+        "points": [
+          "Sous-échantillonnant les images pour réduire leur résolution",
+          "Appliquant des algorithmes de compression aux images et au texte",
+          "Supprimant les métadonnées inutiles et les polices intégrées",
+          "Optimisant la structure interne du PDF"
+        ]
+      },
+      "choosing_level": {
+        "title": "Choisir le bon niveau de compression",
+        "description": "Différents niveaux de compression conviennent à différents usages :",
+        "points": [
+          "<strong>Écran :</strong> Idéal pour les documents qui seront uniquement consultés à l'écran",
+          "<strong>eBook :</strong> Bon équilibre entre qualité et taille de fichier, adapté à la plupart des usages",
+          "<strong>Imprimante :</strong> Meilleure qualité pour les documents qui seront imprimés",
+          "<strong>Prépresse :</strong> Haute qualité avec préservation des couleurs pour l'impression professionnelle"
+        ]
+      },
+      "info": "Le taux de compression réel dépend du contenu de votre PDF. Les documents contenant beaucoup d'images verront une plus grande réduction que les documents contenant uniquement du texte."
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "Connectez-vous à votre compte",
+      "email": "Email",
+      "password": "Mot de passe",
+      "forgot_password": "Mot de passe oublié ?",
+      "sign_in": "Se connecter",
+      "signing_in": "Connexion en cours...",
+      "or_continue_with": "Ou continuer avec",
+      "no_account": "Vous n'avez pas de compte ?",
+      "sign_up": "S'inscrire",
+      "errors": {
+        "invalid_credentials": "Email ou mot de passe invalide",
+        "generic": "Une erreur s'est produite lors de la connexion"
+      }
+    },
+    "register": {
+      "title": "Créer un compte",
+      "name": "Nom complet",
+      "email": "Email",
+      "password": "Mot de passe",
+      "confirm_password": "Confirmer le mot de passe",
+      "terms": "En créant un compte, vous acceptez nos <terms>Conditions d'utilisation</terms> et notre <privacy>Politique de confidentialité</privacy>",
+      "sign_up": "S'inscrire",
+      "signing_up": "Inscription en cours...",
+      "or_continue_with": "Ou continuer avec",
+      "have_account": "Vous avez déjà un compte ?",
+      "sign_in": "Se connecter",
+      "errors": {
+        "passwords_dont_match": "Les mots de passe ne correspondent pas",
+        "email_exists": "L'email existe déjà",
+        "generic": "Une erreur s'est produite lors de l'inscription"
+      }
+    }
+  },
+  "footer": {
+    "company": {
+      "title": "RevisePDF",
+      "description": "Une suite complète d'outils de traitement PDF.",
+      "location": "Édimbourg, Écosse",
+      "email": "Email : {email}"
+    },
+    "blog": {
+      "title": "Blog PDF",
+      "all_articles": "Tous les articles",
+      "tools_for_students": "Outils PDF pour étudiants",
+      "compression_guide": "Guide de compression PDF",
+      "ocr_tech": "Technologie OCR"
+    },
+    "legal": {
+      "title": "Mentions légales",
+      "privacy_policy": "Politique de confidentialité",
+      "terms_of_service": "Conditions d'utilisation",
+      "cookie_policy": "Politique des cookies",
+      "gdpr": "Conformité RGPD",
+      "accessibility": "Déclaration d'accessibilité",
+      "data_protection": "Protection des données",
+      "security": "Informations de sécurité"
+    },
+    "account": {
+      "title": "Compte",
+      "login": "Connexion",
+      "register": "S'inscrire"
+    },
+    "copyright": "© {year} RevisePDF. Dernière mise à jour : {date}. Tous droits réservés."
+  },
+  "home_localized": {
+    "title": "Outils PDF optimisés pour la {region}",
+    "local_support": {
+      "title": "Support et ressources locales",
+      "description": "Accédez à des outils PDF spécialisés et à des ressources adaptées aux utilisateurs de {region} avec documentation et support dans votre langue."
+    },
+    "users": {
+      "title": "Rejoignez des milliers d'utilisateurs en {region}",
+      "description": "Rejoignez plus de 10 000 utilisateurs en {region} qui font confiance à RevisePDF pour leurs besoins de gestion de documents."
+    },
+    "bottom_text": "RevisePDF est entièrement optimisé pour les utilisateurs de {region} avec des fonctionnalités localisées, la conformité aux normes régionales et un support dédié."
+  }
+}

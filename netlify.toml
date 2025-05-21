@@ -1,0 +1,13 @@
+[build]
+  command = "bun run build"
+  publish = ".next"
+
+[build.environment]
+  NEXT_PUBLIC_LOCALES = '["en", "es", "fr", "de", "pt-BR", "hi", "ru", "ko", "vi", "en-CA", "es-MX"]'
+  NEXT_PUBLIC_DEFAULT_LOCALE = "en"
+  NEXTAUTH_DEMO_MODE = "true"
+  NEXTAUTH_URL = "https://example.com"
+  NEXTAUTH_SECRET = "your-next-auth-secret-key-change-in-production"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"

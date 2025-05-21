@@ -1,0 +1,227 @@
+{
+  "navigation": {
+    "all_pdf_tools": "Tất cả Công cụ PDF",
+    "optimise": "Tối ưu hóa",
+    "convert_to_pdf": "Chuyển đổi sang PDF",
+    "convert_from_pdf": "Chuyển đổi từ PDF",
+    "edit": "Chỉnh sửa",
+    "organise": "Tổ chức",
+    "security": "Bảo mật",
+    "login": "Đăng nhập",
+    "register": "Đăng ký",
+    "languages": "Ngôn ngữ",
+    "regional": "Khu vực",
+    "language_selector": "Chọn ngôn ngữ"
+  },
+  "hero": {
+    "title": "Bộ công cụ PDF tối ưu cho mọi nhu cầu",
+    "subtitle": "Tối ưu hóa, Chuyển đổi, Chỉnh sửa, Sắp xếp và nhiều hơn nữa - Tất cả nhu cầu PDF của bạn trong một nơi."
+  },
+  "tools": {
+    "section_title": "Tất cả Công cụ PDF",
+    "optimise": {
+      "title": "Tối ưu hóa",
+      "description": "Nén, sửa chữa và OCR cho PDF của bạn"
+    },
+    "convert_to_pdf": {
+      "title": "Chuyển đổi sang PDF",
+      "description": "Hình ảnh, tài liệu Office, HTML sang PDF"
+    },
+    "edit": {
+      "title": "Chỉnh sửa",
+      "description": "Thêm số trang, hình mờ, chỉnh sửa nội dung"
+    },
+    "organise": {
+      "title": "Sắp xếp",
+      "description": "Ghép, tách, trích xuất và xoay trang"
+    },
+    "convert_from_pdf": {
+      "title": "Chuyển đổi từ PDF",
+      "description": "PDF sang hình ảnh, góc nhìn toàn cảnh, PDF/A"
+    },
+    "security": {
+      "title": "Bảo mật",
+      "description": "Mở khóa, bảo vệ, biên tập và làm phẳng PDF"
+    }
+  },
+  "benefits": {
+    "title": "Tại sao chọn RevisePDF",
+    "items": [
+      {
+        "title": "Miễn phí & Nhanh chóng",
+        "description": "Tất cả công cụ hoàn toàn miễn phí và được tối ưu hóa cho tốc độ."
+      },
+      {
+        "title": "An toàn & Riêng tư",
+        "description": "Tệp của bạn được xử lý an toàn và xóa sau khi xử lý."
+      },
+      {
+        "title": "Truy cập mọi nơi",
+        "description": "Truy cập công cụ của chúng tôi từ bất kỳ thiết bị nào có kết nối internet."
+      }
+    ]
+  },
+  "faq": {
+    "title": "Câu hỏi thường gặp",
+    "items": [
+      {
+        "question": "RevisePDF cung cấp những công cụ PDF nào?",
+        "answer": "RevisePDF cung cấp hơn 20 công cụ PDF miễn phí bao gồm nén, chuyển đổi (sang và từ PDF), chỉnh sửa (nội dung, văn bản, hình mờ, số trang), tổ chức (ghép, tách, trích xuất, xoay) và tính năng bảo mật (mã hóa, giải mã, biên tập, làm phẳng). Tất cả công cụ đều miễn phí sử dụng và không yêu cầu cài đặt phần mềm."
+      },
+      {
+        "question": "RevisePDF có hoàn toàn miễn phí không?",
+        "answer": "Có, RevisePDF hiện đang ở chế độ beta với tất cả tính năng có sẵn miễn phí. Chúng tôi có kế hoạch triển khai mô hình đăng ký trong tương lai cho kích thước tệp lớn hơn, nhưng chúng tôi sẽ luôn duy trì cấp độ miễn phí với giới hạn rộng rãi cho nhu cầu xử lý PDF cơ bản."
+      },
+      {
+        "question": "RevisePDF an toàn như thế nào để xử lý tệp PDF của tôi?",
+        "answer": "RevisePDF coi trọng bảo mật. Tất cả việc truyền tệp đều được mã hóa bằng HTTPS/TLS, và tệp của bạn tự động bị xóa sau khi xử lý hoặc sau một thời gian ngắn (thường là 24 giờ). Chúng tôi không bao giờ chia sẻ tệp của bạn với bên thứ ba, và quá trình xử lý của chúng tôi diễn ra trên máy chủ an toàn với các biện pháp kiểm soát truy cập nghiêm ngặt."
+      },
+      {
+        "question": "Tôi có cần tạo tài khoản để sử dụng RevisePDF không?",
+        "answer": "Không, bạn có thể sử dụng hầu hết các công cụ của RevisePDF mà không cần tạo tài khoản. Tuy nhiên, tạo tài khoản miễn phí sẽ mang lại cho bạn lợi ích như giới hạn kích thước tệp cao hơn, khả năng lưu lịch sử xử lý và truy cập vào các tính năng cao cấp khi chúng có sẵn."
+      },
+      {
+        "question": "OCR là gì và tại sao tôi cần nó cho PDF của mình?",
+        "answer": "OCR (Nhận dạng ký tự quang học) là công nghệ chuyển đổi tài liệu được quét hoặc hình ảnh có chứa văn bản thành tệp PDF có thể tìm kiếm và chỉnh sửa. Nếu bạn có tài liệu đã quét, sử dụng OCR cho phép bạn tìm kiếm văn bản trong tài liệu, sao chép văn bản từ nó và làm cho tài liệu dễ tiếp cận hơn cho trình đọc màn hình và các công nghệ hỗ trợ khác."
+      }
+    ]
+  },
+  "compress": {
+    "title": "Nén PDF",
+    "description": "Giảm kích thước PDF của bạn để chia sẻ dễ dàng hơn, trong khi vẫn duy trì chất lượng chấp nhận được.",
+    "button": "Nén PDF",
+    "drag_drop": "Kéo và thả tệp của bạn vào đây hoặc nhấp để duyệt",
+    "max_size": "Kích thước tệp tối đa: {size}MB",
+    "options_title": "Tùy chọn nén",
+    "levels": {
+      "screen": {
+        "title": "Màn hình",
+        "description": "Chất lượng thấp, kích thước tệp nhỏ nhất",
+        "reduction": "Giảm 70-90%"
+      },
+      "ebook": {
+        "title": "Sách điện tử",
+        "description": "Chất lượng trung bình, kích thước tệp tốt",
+        "reduction": "Giảm 50-70%"
+      },
+      "printer": {
+        "title": "Máy in",
+        "description": "Chất lượng cao, kích thước tệp lớn hơn",
+        "reduction": "Giảm 30-50%"
+      },
+      "prepress": {
+        "title": "Trước in",
+        "description": "Chất lượng cao với bảo tồn màu sắc",
+        "reduction": "Giảm 20-40%"
+      },
+      "default": {
+        "title": "Mặc định",
+        "description": "Cài đặt nén tiêu chuẩn",
+        "reduction": "Giảm 40-60%"
+      }
+    },
+    "about": {
+      "title": "Về nén PDF",
+      "description": "Nén PDF giảm kích thước tệp của tài liệu PDF trong khi vẫn duy trì chất lượng chấp nhận được. Điều này hữu ích cho việc chia sẻ tài liệu qua email, tải lên trang web hoặc tiết kiệm không gian lưu trữ.",
+      "how_works": {
+        "title": "Cách thức hoạt động",
+        "description": "Công cụ nén của chúng tôi sử dụng công cụ xử lý PDF chất lượng cao để tối ưu hóa tệp PDF của bạn. Nó hoạt động bằng cách:",
+        "points": [
+          "Giảm mẫu hình ảnh để giảm độ phân giải của chúng",
+          "Áp dụng thuật toán nén cho hình ảnh và văn bản",
+          "Loại bỏ metadata không cần thiết và phông chữ nhúng",
+          "Tối ưu hóa cấu trúc nội bộ của PDF"
+        ]
+      },
+      "choosing_level": {
+        "title": "Chọn mức độ nén phù hợp",
+        "description": "Các mức độ nén khác nhau phù hợp cho các mục đích khác nhau:",
+        "points": [
+          "<strong>Màn hình:</strong> Tốt nhất cho tài liệu chỉ xem trên màn hình",
+          "<strong>Sách điện tử:</strong> Cân bằng tốt giữa chất lượng và kích thước tệp, phù hợp cho hầu hết mục đích",
+          "<strong>Máy in:</strong> Chất lượng tốt hơn cho tài liệu sẽ được in",
+          "<strong>Trước in:</strong> Chất lượng cao với bảo tồn màu sắc cho in ấn chuyên nghiệp"
+        ]
+      },
+      "info": "Tỷ lệ nén thực tế phụ thuộc vào nội dung của PDF của bạn. Tài liệu có nhiều hình ảnh sẽ thấy giảm nhiều hơn so với tài liệu chỉ có văn bản."
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "Đăng nhập vào tài khoản của bạn",
+      "email": "Email",
+      "password": "Mật khẩu",
+      "forgot_password": "Quên mật khẩu?",
+      "sign_in": "Đăng nhập",
+      "signing_in": "Đang đăng nhập...",
+      "or_continue_with": "Hoặc tiếp tục với",
+      "no_account": "Chưa có tài khoản?",
+      "sign_up": "Đăng ký",
+      "errors": {
+        "invalid_credentials": "Email hoặc mật khẩu không hợp lệ",
+        "generic": "Đã xảy ra lỗi trong quá trình đăng nhập"
+      }
+    },
+    "register": {
+      "title": "Tạo tài khoản",
+      "name": "Họ tên đầy đủ",
+      "email": "Email",
+      "password": "Mật khẩu",
+      "confirm_password": "Xác nhận mật khẩu",
+      "terms": "Bằng cách tạo tài khoản, bạn đồng ý với <terms>Điều khoản dịch vụ</terms> và <privacy>Chính sách quyền riêng tư</privacy> của chúng tôi",
+      "sign_up": "Đăng ký",
+      "signing_up": "Đang đăng ký...",
+      "or_continue_with": "Hoặc tiếp tục với",
+      "have_account": "Đã có tài khoản?",
+      "sign_in": "Đăng nhập",
+      "errors": {
+        "passwords_dont_match": "Mật khẩu không khớp",
+        "email_exists": "Email đã tồn tại",
+        "generic": "Đã xảy ra lỗi trong quá trình đăng ký"
+      }
+    }
+  },
+  "footer": {
+    "company": {
+      "title": "RevisePDF",
+      "description": "Bộ công cụ xử lý PDF toàn diện.",
+      "location": "Edinburgh, Scotland",
+      "email": "Email: {email}"
+    },
+    "blog": {
+      "title": "Blog PDF",
+      "all_articles": "Tất cả bài viết",
+      "tools_for_students": "Công cụ PDF cho học sinh",
+      "compression_guide": "Hướng dẫn nén PDF",
+      "ocr_tech": "Công nghệ OCR"
+    },
+    "legal": {
+      "title": "Pháp lý",
+      "privacy_policy": "Chính sách quyền riêng tư",
+      "terms_of_service": "Điều khoản dịch vụ",
+      "cookie_policy": "Chính sách cookie",
+      "gdpr": "Tuân thủ GDPR",
+      "accessibility": "Tuyên bố về khả năng tiếp cận",
+      "data_protection": "Bảo vệ dữ liệu",
+      "security": "Thông tin bảo mật"
+    },
+    "account": {
+      "title": "Tài khoản",
+      "login": "Đăng nhập",
+      "register": "Đăng ký"
+    },
+    "copyright": "© {year} RevisePDF. Cập nhật cuối: {date}. Đã đăng ký bản quyền."
+  },
+  "home_localized": {
+    "title": "Công cụ PDF được tối ưu hóa cho {region}",
+    "local_support": {
+      "title": "Hỗ trợ và tài nguyên địa phương",
+      "description": "Truy cập các công cụ PDF chuyên dụng và tài nguyên được điều chỉnh cho người dùng {region} với tài liệu và hỗ trợ bằng ngôn ngữ của bạn."
+    },
+    "users": {
+      "title": "Tham gia cùng hàng nghìn người dùng tại {region}",
+      "description": "Tham gia cùng hơn 10.000 người dùng tại {region} đã tin tưởng RevisePDF cho nhu cầu quản lý tài liệu của họ."
+    },
+    "bottom_text": "RevisePDF được tối ưu hóa hoàn toàn cho người dùng {region} với các tính năng địa phương hóa, tuân thủ các tiêu chuẩn trong khu vực và hỗ trợ riêng biệt."
+  }
+}

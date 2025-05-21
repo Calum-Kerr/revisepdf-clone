@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="40" viewBox="0 0 200 40">
+  <style>
+    .text { font-family: Arial, sans-serif; font-weight: bold; }
+    .revise { fill: #288283; }
+    .pdf { fill: #333; }
+  </style>
+  <text x="10" y="30" class="text revise" font-size="28">Revise</text>
+  <text x="110" y="30" class="text pdf" font-size="28">PDF</text>
+</svg>

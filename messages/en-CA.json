@@ -1,0 +1,227 @@
+{
+  "navigation": {
+    "all_pdf_tools": "All PDF Tools",
+    "optimise": "Optimize",
+    "convert_to_pdf": "Convert to PDF",
+    "convert_from_pdf": "Convert from PDF",
+    "edit": "Edit",
+    "organise": "Organize",
+    "security": "Security",
+    "login": "Log In",
+    "register": "Register",
+    "languages": "Languages",
+    "regional": "Regional",
+    "language_selector": "Select language"
+  },
+  "hero": {
+    "title": "The Ultimate PDF Toolkit for Every Need",
+    "subtitle": "Optimize, Convert, Edit, Organize, and More - All your PDF needs in one place."
+  },
+  "tools": {
+    "section_title": "All PDF Tools",
+    "optimise": {
+      "title": "Optimize",
+      "description": "Compress, repair, and OCR your PDFs"
+    },
+    "convert_to_pdf": {
+      "title": "Convert to PDF",
+      "description": "Images, Office docs, HTML to PDF"
+    },
+    "edit": {
+      "title": "Edit",
+      "description": "Add page numbers, watermarks, edit content"
+    },
+    "organise": {
+      "title": "Organize",
+      "description": "Merge, split, extract, and rotate pages"
+    },
+    "convert_from_pdf": {
+      "title": "Convert from PDF",
+      "description": "PDFs to images, panoramic views, PDF/A"
+    },
+    "security": {
+      "title": "Security",
+      "description": "Unlock, protect, redact, and flatten PDFs"
+    }
+  },
+  "benefits": {
+    "title": "Why Choose RevisePDF",
+    "items": [
+      {
+        "title": "Free & Fast",
+        "description": "All tools are completely free and optimized for speed."
+      },
+      {
+        "title": "Secure & Private",
+        "description": "Your files are processed securely and deleted after processing."
+      },
+      {
+        "title": "Accessible Anywhere",
+        "description": "Access our tools from any device with an internet connection."
+      }
+    ]
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "items": [
+      {
+        "question": "What PDF tools does RevisePDF offer?",
+        "answer": "RevisePDF offers over 20 free PDF tools including compression, conversion (to and from PDF), editing (content, text, watermarks, page numbers), organization (merge, split, extract, rotate), and security features (encryption, decryption, redaction, flattening). All tools are free to use and require no software installation."
+      },
+      {
+        "question": "Is RevisePDF completely free to use?",
+        "answer": "Yes, RevisePDF is currently in beta mode with all features available for free. We plan to implement a subscription model in the future for larger file sizes, but we will always maintain a free tier with generous limits for basic PDF processing needs."
+      },
+      {
+        "question": "How secure is RevisePDF for processing my PDF files?",
+        "answer": "RevisePDF takes security seriously. All file transfers are encrypted using HTTPS/TLS, and your files are automatically deleted after processing or after a short period (typically 24 hours). We never share your files with third parties, and our processing happens on secure servers with strict access controls."
+      },
+      {
+        "question": "Do I need to create an account to use RevisePDF?",
+        "answer": "No, you can use most of RevisePDF's tools without creating an account. However, creating a free account gives you benefits like higher file size limits, the ability to save your processing history, and access to premium features when they become available."
+      },
+      {
+        "question": "What is OCR and why would I need it for my PDFs?",
+        "answer": "OCR (Optical Character Recognition) is a technology that converts scanned documents or images containing text into searchable and editable PDF files. If you have scanned documents, using OCR allows you to search for text within the document, copy text from it, and make the document more accessible for screen readers and other assistive technologies."
+      }
+    ]
+  },
+  "compress": {
+    "title": "Compress PDF",
+    "description": "Reduce the size of your PDF for easier sharing, while maintaining acceptable quality.",
+    "button": "Compress PDF",
+    "drag_drop": "Drag and drop your file here or click to browse",
+    "max_size": "Maximum file size: {size}MB",
+    "options_title": "Compression Options",
+    "levels": {
+      "screen": {
+        "title": "Screen",
+        "description": "Low quality, smallest file size",
+        "reduction": "70-90% reduction"
+      },
+      "ebook": {
+        "title": "eBook",
+        "description": "Medium quality, good file size",
+        "reduction": "50-70% reduction"
+      },
+      "printer": {
+        "title": "Printer",
+        "description": "High quality, larger file size",
+        "reduction": "30-50% reduction"
+      },
+      "prepress": {
+        "title": "Prepress",
+        "description": "High quality with colour preservation",
+        "reduction": "20-40% reduction"
+      },
+      "default": {
+        "title": "Default",
+        "description": "Standard compression settings",
+        "reduction": "40-60% reduction"
+      }
+    },
+    "about": {
+      "title": "About PDF Compression",
+      "description": "PDF compression reduces the file size of your PDF documents while maintaining acceptable quality. This is useful for sharing documents via email, uploading to websites, or saving storage space.",
+      "how_works": {
+        "title": "How It Works",
+        "description": "Our compression tool uses a high-quality PDF processing engine to optimize your PDF files. It works by:",
+        "points": [
+          "Downsampling images to reduce their resolution",
+          "Applying compression algorithms to images and text",
+          "Removing unnecessary metadata and embedded fonts",
+          "Optimizing the internal structure of the PDF"
+        ]
+      },
+      "choosing_level": {
+        "title": "Choosing the Right Compression Level",
+        "description": "Different compression levels are suitable for different purposes:",
+        "points": [
+          "<strong>Screen:</strong> Best for documents that will only be viewed on screen",
+          "<strong>eBook:</strong> Good balance between quality and file size, suitable for most purposes",
+          "<strong>Printer:</strong> Better quality for documents that will be printed",
+          "<strong>Prepress:</strong> High quality with colour preservation for professional printing"
+        ]
+      },
+      "info": "The actual compression ratio depends on the content of your PDF. Documents with many images will see greater reduction than text-only documents."
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "Sign in to your account",
+      "email": "Email",
+      "password": "Password",
+      "forgot_password": "Forgot password?",
+      "sign_in": "Sign in",
+      "signing_in": "Signing in...",
+      "or_continue_with": "Or continue with",
+      "no_account": "Don't have an account?",
+      "sign_up": "Sign up",
+      "errors": {
+        "invalid_credentials": "Invalid email or password",
+        "generic": "An error occurred during login"
+      }
+    },
+    "register": {
+      "title": "Create an account",
+      "name": "Full Name",
+      "email": "Email",
+      "password": "Password",
+      "confirm_password": "Confirm Password",
+      "terms": "By creating an account, you agree to our <terms>Terms of Service</terms> and <privacy>Privacy Policy</privacy>",
+      "sign_up": "Sign up",
+      "signing_up": "Signing up...",
+      "or_continue_with": "Or continue with",
+      "have_account": "Already have an account?",
+      "sign_in": "Sign in",
+      "errors": {
+        "passwords_dont_match": "Passwords do not match",
+        "email_exists": "Email already exists",
+        "generic": "An error occurred during registration"
+      }
+    }
+  },
+  "footer": {
+    "company": {
+      "title": "RevisePDF",
+      "description": "A comprehensive suite of PDF processing tools.",
+      "location": "Edinburgh, Scotland",
+      "email": "Email: {email}"
+    },
+    "blog": {
+      "title": "PDF Blog",
+      "all_articles": "All Articles",
+      "tools_for_students": "PDF Tools for Students",
+      "compression_guide": "PDF Compression Guide",
+      "ocr_tech": "OCR Technology"
+    },
+    "legal": {
+      "title": "Legal",
+      "privacy_policy": "Privacy Policy",
+      "terms_of_service": "Terms of Service",
+      "cookie_policy": "Cookie Policy",
+      "gdpr": "GDPR Compliance",
+      "accessibility": "Accessibility Statement",
+      "data_protection": "Data Protection",
+      "security": "Security Information"
+    },
+    "account": {
+      "title": "Account",
+      "login": "Log In",
+      "register": "Register"
+    },
+    "copyright": "© {year} RevisePDF. Last updated: {date}. All rights reserved."
+  },
+  "home_localized": {
+    "title": "PDF Tools Optimized for {region}",
+    "local_support": {
+      "title": "Local Support & Resources",
+      "description": "Access specialized PDF tools and resources tailored for {region} users with documentation and support in your preferred language, including both English and French."
+    },
+    "users": {
+      "title": "Join Thousands of {region} Users",
+      "description": "Join over 10,000 users across {region} who trust RevisePDF for their document management needs, from Vancouver to Halifax."
+    },
+    "bottom_text": "RevisePDF is fully optimized for {region} users with localized features, compliance with Canadian standards, and dedicated support from our Canadian team."
+  }
+}

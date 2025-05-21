@@ -1,0 +1,227 @@
+{
+  "navigation": {
+    "all_pdf_tools": "모든 PDF 도구",
+    "optimise": "최적화",
+    "convert_to_pdf": "PDF로 변환",
+    "convert_from_pdf": "PDF에서 변환",
+    "edit": "편집",
+    "organise": "정리",
+    "security": "보안",
+    "login": "로그인",
+    "register": "회원가입",
+    "languages": "언어",
+    "regional": "지역별",
+    "language_selector": "언어 선택"
+  },
+  "hero": {
+    "title": "모든 요구 사항을 위한 최고의 PDF 도구킷",
+    "subtitle": "최적화, 변환, 편집, 정리 등 - 모든 PDF 요구 사항을 한 곳에서 해결하세요."
+  },
+  "tools": {
+    "section_title": "모든 PDF 도구",
+    "optimise": {
+      "title": "최적화",
+      "description": "PDF 압축, 복구 및 OCR"
+    },
+    "convert_to_pdf": {
+      "title": "PDF로 변환",
+      "description": "이미지, Office 문서, HTML을 PDF로 변환"
+    },
+    "edit": {
+      "title": "편집",
+      "description": "페이지 번호, 워터마크 추가, 내용 편집"
+    },
+    "organise": {
+      "title": "정리",
+      "description": "페이지 병합, 분할, 추출 및 회전"
+    },
+    "convert_from_pdf": {
+      "title": "PDF에서 변환",
+      "description": "PDF를 이미지, 파노라마 뷰, PDF/A로 변환"
+    },
+    "security": {
+      "title": "보안",
+      "description": "PDF 잠금 해제, 보호, 수정 및 평평하게 하기"
+    }
+  },
+  "benefits": {
+    "title": "RevisePDF를 선택해야 하는 이유",
+    "items": [
+      {
+        "title": "무료 및 빠름",
+        "description": "모든 도구는 완전히 무료이며 속도를 위해 최적화되어 있습니다."
+      },
+      {
+        "title": "안전 및 개인 정보 보호",
+        "description": "파일은 안전하게 처리되며 처리 후 삭제됩니다."
+      },
+      {
+        "title": "어디서나 접근 가능",
+        "description": "인터넷 연결이 있는 모든 기기에서 도구에 접근할 수 있습니다."
+      }
+    ]
+  },
+  "faq": {
+    "title": "자주 묻는 질문",
+    "items": [
+      {
+        "question": "RevisePDF는 어떤 PDF 도구를 제공하나요?",
+        "answer": "RevisePDF는 압축, 변환(PDF로 및 PDF에서), 편집(내용, 텍스트, 워터마크, 페이지 번호), 정리(병합, 분할, 추출, 회전) 및 보안 기능(암호화, 복호화, 수정, 평평하게 하기)을 포함한 20개 이상의 무료 PDF 도구를 제공합니다. 모든 도구는 무료로 사용할 수 있으며 소프트웨어 설치가 필요하지 않습니다."
+      },
+      {
+        "question": "RevisePDF는 완전히 무료인가요?",
+        "answer": "예, RevisePDF는 현재 모든 기능이 무료로 제공되는 베타 모드입니다. 향후 더 큰 파일 크기에 대한 구독 모델을 구현할 계획이지만, 기본 PDF 처리 요구 사항에 대한 관대한 제한이 있는 무료 등급을 항상 유지할 것입니다."
+      },
+      {
+        "question": "PDF 파일 처리를 위한 RevisePDF의 보안은 어떤가요?",
+        "answer": "RevisePDF는 보안을 중요하게 생각합니다. 모든 파일 전송은 HTTPS/TLS를 사용하여 암호화되며, 파일은 처리 후 또는 짧은 기간(일반적으로 24시간) 후에 자동으로 삭제됩니다. 우리는 파일을 제3자와 공유하지 않으며, 모든 처리는 엄격한 접근 제어가 있는 보안 서버에서 이루어집니다."
+      },
+      {
+        "question": "RevisePDF를 사용하기 위해 계정을 만들어야 하나요?",
+        "answer": "아니요, 계정을 만들지 않고도 RevisePDF의 대부분의 도구를 사용할 수 있습니다. 그러나 무료 계정을 만들면 더 높은 파일 크기 제한, 처리 기록 저장 능력, 프리미엄 기능 사용 등의 혜택을 받을 수 있습니다."
+      },
+      {
+        "question": "OCR이란 무엇이며 PDF에 왜 필요한가요?",
+        "answer": "OCR(광학 문자 인식)은 스캔된 문서나 텍스트가 포함된 이미지를 검색 가능하고 편집 가능한 PDF 파일로 변환하는 기술입니다. 스캔된 문서가 있는 경우, OCR을 사용하면 문서 내에서 텍스트를 검색하고, 문서에서 텍스트를 복사하며, 화면 리더 및 기타 보조 기술을 위해 문서를 더 접근 가능하게 만들 수 있습니다."
+      }
+    ]
+  },
+  "compress": {
+    "title": "PDF 압축",
+    "description": "적절한 품질을 유지하면서 더 쉽게 공유할 수 있도록 PDF 크기를 줄입니다.",
+    "button": "PDF 압축",
+    "drag_drop": "파일을 여기에 끌어다 놓거나 클릭하여 찾아보기",
+    "max_size": "최대 파일 크기: {size}MB",
+    "options_title": "압축 옵션",
+    "levels": {
+      "screen": {
+        "title": "화면",
+        "description": "낮은 품질, 가장 작은 파일 크기",
+        "reduction": "70-90% 감소"
+      },
+      "ebook": {
+        "title": "전자책",
+        "description": "중간 품질, 좋은 파일 크기",
+        "reduction": "50-70% 감소"
+      },
+      "printer": {
+        "title": "프린터",
+        "description": "높은 품질, 더 큰 파일 크기",
+        "reduction": "30-50% 감소"
+      },
+      "prepress": {
+        "title": "프리프레스",
+        "description": "색상 보존과 함께 높은 품질",
+        "reduction": "20-40% 감소"
+      },
+      "default": {
+        "title": "기본",
+        "description": "표준 압축 설정",
+        "reduction": "40-60% 감소"
+      }
+    },
+    "about": {
+      "title": "PDF 압축에 대하여",
+      "description": "PDF 압축은 적절한 품질을 유지하면서 PDF 문서의 파일 크기를 줄입니다. 이메일을 통해 문서를 공유하거나, 웹사이트에 업로드하거나, 저장 공간을 절약하는 데 유용합니다.",
+      "how_works": {
+        "title": "작동 방식",
+        "description": "저희 압축 도구는 PDF 파일을 최적화하기 위해 고품질 PDF 처리 엔진을 사용합니다. 다음과 같은 방식으로 작동합니다:",
+        "points": [
+          "이미지 해상도를 줄이기 위한 다운샘플링",
+          "이미지와 텍스트에 압축 알고리즘 적용",
+          "불필요한 메타데이터와 임베디드 폰트 제거",
+          "PDF의 내부 구조 최적화"
+        ]
+      },
+      "choosing_level": {
+        "title": "적절한 압축 레벨 선택",
+        "description": "다양한 압축 레벨은 다양한 목적에 적합합니다:",
+        "points": [
+          "<strong>화면:</strong> 화면에서만 볼 문서에 가장 적합",
+          "<strong>전자책:</strong> 품질과 파일 크기 사이의 좋은 균형, 대부분의 목적에 적합",
+          "<strong>프린터:</strong> 인쇄될 문서를 위한 더 나은 품질",
+          "<strong>프리프레스:</strong> 전문적인 인쇄를 위한 색상 보존과 함께 높은 품질"
+        ]
+      },
+      "info": "실제 압축 비율은 PDF의 내용에 따라 다릅니다. 이미지가 많은 문서는 텍스트만 있는 문서보다 더 많은 감소를 볼 수 있습니다."
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "계정에 로그인",
+      "email": "이메일",
+      "password": "비밀번호",
+      "forgot_password": "비밀번호를 잊으셨나요?",
+      "sign_in": "로그인",
+      "signing_in": "로그인 중...",
+      "or_continue_with": "또는 다음으로 계속",
+      "no_account": "계정이 없으신가요?",
+      "sign_up": "회원가입",
+      "errors": {
+        "invalid_credentials": "잘못된 이메일 또는 비밀번호",
+        "generic": "로그인 중 오류가 발생했습니다"
+      }
+    },
+    "register": {
+      "title": "계정 만들기",
+      "name": "이름",
+      "email": "이메일",
+      "password": "비밀번호",
+      "confirm_password": "비밀번호 확인",
+      "terms": "계정을 만들면 <terms>서비스 약관</terms> 및 <privacy>개인정보 보호정책</privacy>에 동의하게 됩니다",
+      "sign_up": "회원가입",
+      "signing_up": "가입 중...",
+      "or_continue_with": "또는 다음으로 계속",
+      "have_account": "이미 계정이 있으신가요?",
+      "sign_in": "로그인",
+      "errors": {
+        "passwords_dont_match": "비밀번호가 일치하지 않습니다",
+        "email_exists": "이메일이 이미 존재합니다",
+        "generic": "등록 중 오류가 발생했습니다"
+      }
+    }
+  },
+  "footer": {
+    "company": {
+      "title": "RevisePDF",
+      "description": "종합적인 PDF 처리 도구 모음입니다.",
+      "location": "에든버러, 스코틀랜드",
+      "email": "이메일: {email}"
+    },
+    "blog": {
+      "title": "PDF 블로그",
+      "all_articles": "모든 기사",
+      "tools_for_students": "학생을 위한 PDF 도구",
+      "compression_guide": "PDF 압축 가이드",
+      "ocr_tech": "OCR 기술"
+    },
+    "legal": {
+      "title": "법률",
+      "privacy_policy": "개인정보 보호정책",
+      "terms_of_service": "서비스 약관",
+      "cookie_policy": "쿠키 정책",
+      "gdpr": "GDPR 준수",
+      "accessibility": "접근성 성명",
+      "data_protection": "데이터 보호",
+      "security": "보안 정보"
+    },
+    "account": {
+      "title": "계정",
+      "login": "로그인",
+      "register": "회원가입"
+    },
+    "copyright": "© {year} RevisePDF. 마지막 업데이트: {date}. 모든 권리 보유."
+  },
+  "home_localized": {
+    "title": "{region}에 최적화된 PDF 도구",
+    "local_support": {
+      "title": "현지 지원 및 리소스",
+      "description": "{region} 사용자를 위해 특별히 제작된, 귀하의 언어로 된 문서와 지원이 포함된 전문 PDF 도구 및 리소스에 액세스하세요."
+    },
+    "users": {
+      "title": "{region}의 수천 명의 사용자와 함께하세요",
+      "description": "문서 관리 요구 사항을 위해 RevisePDF를 신뢰하는 {region}의 10,000명 이상의 사용자와 함께하세요."
+    },
+    "bottom_text": "RevisePDF는 현지화된 기능, 지역별 표준 준수 및 전담 지원으로 {region} 사용자를 위해 완벽하게 최적화되어 있습니다."
+  }
+}

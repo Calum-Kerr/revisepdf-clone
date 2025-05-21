@@ -1,0 +1,62 @@
+{
+  "name": "RevisePDF",
+  "description": "PDF editing and management application",
+  "repository": "https://github.com/Calum-Kerr/revisepdf-clone",
+  "keywords": ["pdf", "nextjs", "react", "supabase", "authentication"],
+  "env": {
+    "NEXTAUTH_SECRET": {
+      "description": "A secret key for verifying the integrity of signed cookies",
+      "value": "r7aqyHNEbPPQy9gugRvvEqhPSs+TL9jaJd6f4cIkgLw"
+    },
+    "NEXTAUTH_URL": {
+      "description": "The base URL of your application"
+    },
+    "NEXTAUTH_DEMO_MODE": {
+      "description": "Whether to run in demo mode (true/false)",
+      "value": "false"
+    },
+    "NODE_ENV": {
+      "description": "Node environment",
+      "value": "production"
+    },
+    "NEXT_PUBLIC_SUPABASE_URL": {
+      "description": "Your Supabase URL"
+    },
+    "SUPABASE_SERVICE_KEY": {
+      "description": "Your Supabase service key"
+    },
+    "GOOGLE_CLIENT_ID": {
+      "description": "Google OAuth client ID"
+    },
+    "GOOGLE_CLIENT_SECRET": {
+      "description": "Google OAuth client secret"
+    },
+    "EMAIL_SERVER_HOST": {
+      "description": "SMTP server host"
+    },
+    "EMAIL_SERVER_PORT": {
+      "description": "SMTP server port"
+    },
+    "EMAIL_SERVER_USER": {
+      "description": "SMTP server username"
+    },
+    "EMAIL_SERVER_PASSWORD": {
+      "description": "SMTP server password"
+    },
+    "EMAIL_FROM": {
+      "description": "Email sender address"
+    },
+    "NEXT_PUBLIC_DEFAULT_LOCALE": {
+      "description": "Default locale",
+      "value": "en-GB"
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ],
+  "scripts": {
+    "postdeploy": "npm run build"
+  }
+}
