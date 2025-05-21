@@ -10,11 +10,10 @@ const nextConfig = {
   staticPageGenerationTimeout: 180, // Increase timeout for static page generation (in seconds)
   // Using standalone output instead of export for API route compatibility
   output: 'standalone',
+  // External packages that need to be transpiled - moved from experimental
+  serverExternalPackages: ['bcryptjs'],
   experimental: {
-    // Transpile bcryptjs for server components
-    serverComponentsExternalPackages: ['bcryptjs'],
-    // Disable suspense bailout for better compatibility
-    missingSuspenseWithCSRBailout: false,
+    // Empty experimental object to avoid errors
   },
   images: {
     domains: [
