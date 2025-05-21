@@ -4,6 +4,8 @@ import { z } from "zod";
 import { createUser, getUserByEmail } from "@/lib/supabase";
 import { sendVerificationEmail } from "@/lib/supabase-email";
 
+export const dynamic = 'force-dynamic';
+
 // Validation schema for registration
 const registerSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),

@@ -15,11 +15,17 @@ npm run build
 
 # Verify build artifacts
 echo "Verifying build artifacts..."
-if [ -d "out" ]; then
-  echo "Static export directory 'out' found"
-  ls -la out/
+if [ -d ".next/standalone" ]; then
+  echo "Next.js standalone directory found"
+  ls -la .next/standalone/
 else
-  echo "WARNING: Static export directory 'out' not found"
+  echo "WARNING: Next.js standalone directory not found"
+  echo "Checking for .next directory..."
+  if [ -d ".next" ]; then
+    echo ".next directory found"
+    ls -la .next/
+  fi
+
   mkdir -p public
   echo "Creating fallback maintenance page..."
   cat > public/maintenance.html << 'EOL'

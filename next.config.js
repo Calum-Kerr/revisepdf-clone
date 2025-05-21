@@ -8,11 +8,11 @@ const nextConfig = {
   reactStrictMode: true,
   // Heroku deployment configuration
   staticPageGenerationTimeout: 180, // Increase timeout for static page generation (in seconds)
-  output: 'export', // Generate static HTML files for better Heroku compatibility
-  distDir: 'out', // Output directory for static files
+  // Using standalone output instead of export for API route compatibility
+  output: 'standalone',
   experimental: {
-    // Improve static generation with suspense
-    missingSuspenseWithCSRBailout: false,
+    // Remove unsupported experimental option
+    serverComponentsExternalPackages: ['bcryptjs'],
   },
   images: {
     domains: [

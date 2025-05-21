@@ -1,8 +1,9 @@
-// Static Express server for Heroku deployment
+// Custom server for Next.js standalone mode on Heroku
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
 const compression = require('compression');
+const { parse } = require('url');
 
 // Create Express app
 const app = express();
@@ -17,57 +18,60 @@ console.log('Current directory:', process.cwd());
 // Enable compression
 app.use(compression());
 
-// Determine the static directory
-let staticDir = 'out';
-if (!fs.existsSync(path.join(process.cwd(), staticDir))) {
-  console.log(`${staticDir} directory not found, falling back to public directory`);
-  staticDir = 'public';
+// Determine the Next.js server path
+const nextServerPath = path.join(process.cwd(), '.next/standalone/server.js');
+const publicPath = path.join(process.cwd(), 'public');
+const nextStaticPath = path.join(process.cwd(), '.next/static');
+const hasNextServer = fs.existsSync(nextServerPath);
+
+console.log(`Next.js standalone server exists: ${hasNextServer}`);
+
+if (hasNextServer) {
+  // If we have the Next.js standalone server, use it
+  console.log('Using Next.js standalone server');
+
+  // Import the Next.js server
+  const nextServer = require(nextServerPath);
+  const nextApp = nextServer.nextServer;
+
+  // Serve public files
+  app.use('/public', express.static(publicPath));
+
+  // Serve Next.js static files
+  app.use('/_next/static', express.static(nextStaticPath));
+
+  // Let Next.js handle all other routes
+  app.all('*', (req, res) => {
+    const parsedUrl = parse(req.url, true);
+    nextApp.getRequestHandler()(req, res, parsedUrl);
+  });
+} else {
+  // Fallback to static file serving if Next.js server is not available
+  console.log('Next.js standalone server not found, falling back to static serving');
+
+  // Check for .next directory
+  if (fs.existsSync(path.join(process.cwd(), '.next'))) {
+    console.log('.next directory exists');
+
+    // List files in .next directory
+    const files = fs.readdirSync(path.join(process.cwd(), '.next'));
+    console.log('.next directory contents:', files);
+  }
+
+  // Serve static files from public directory
+  app.use(express.static(publicPath));
+
+  // Serve maintenance page for all routes
+  app.get('*', (req, res) => {
+    const maintenancePath = path.join(publicPath, 'maintenance.html');
+    if (fs.existsSync(maintenancePath)) {
+      return res.status(503).sendFile(maintenancePath);
+    }
+
+    // If maintenance page doesn't exist, send a simple message
+    res.status(503).send('Site is under maintenance. Please check back soon.');
+  });
 }
-
-console.log(`Serving static files from ${staticDir} directory`);
-
-// Serve static files
-app.use(express.static(path.join(process.cwd(), staticDir), {
-  maxAge: '1y', // Cache static assets for 1 year
-  etag: true,
-}));
-
-// Handle all routes for SPA
-app.get('*', (req, res) => {
-  // First try to serve the exact path
-  const filePath = path.join(process.cwd(), staticDir, req.path);
-
-  if (fs.existsSync(filePath) && fs.statSync(filePath).isFile()) {
-    return res.sendFile(filePath);
-  }
-
-  // Then try with .html extension
-  const htmlPath = path.join(process.cwd(), staticDir, `${req.path}.html`);
-  if (fs.existsSync(htmlPath)) {
-    return res.sendFile(htmlPath);
-  }
-
-  // Then try as a directory index
-  const indexPath = path.join(process.cwd(), staticDir, req.path, 'index.html');
-  if (fs.existsSync(indexPath)) {
-    return res.sendFile(indexPath);
-  }
-
-  // If all else fails, serve the index.html (for client-side routing)
-  const fallbackPath = path.join(process.cwd(), staticDir, 'index.html');
-  if (fs.existsSync(fallbackPath)) {
-    return res.sendFile(fallbackPath);
-  }
-
-  // Last resort: serve maintenance page
-  const maintenancePath = path.join(process.cwd(), 'public', 'maintenance.html');
-  if (fs.existsSync(maintenancePath)) {
-    return res.status(503).sendFile(maintenancePath);
-  }
-
-  // If even that fails, send a simple message
-  res.status(503).send('Site is under maintenance. Please check back soon.');
-});
 
 // Start the server
 app.listen(port, '0.0.0.0', () => {

@@ -6,20 +6,22 @@ import { auth } from "@/auth";
  * API route for handling sign-out
  * This ensures that all cookies are properly cleared
  */
+export const dynamic = 'force-dynamic';
+
 export async function GET(request: NextRequest) {
   const cookieStore = cookies();
-  
+
   // Clear all auth-related cookies
   cookieStore.getAll().forEach((cookie) => {
     if (cookie.name.startsWith("next-auth")) {
       cookieStore.delete(cookie.name);
     }
   });
-  
+
   // Get the locale from the request URL
   const url = new URL(request.url);
   const locale = url.pathname.split("/")[1] || "en-GB";
-  
+
   // Redirect to the home page
   return NextResponse.redirect(new URL(`/${locale}`, request.url));
 }

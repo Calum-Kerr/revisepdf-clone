@@ -3,6 +3,8 @@ import { z } from "zod";
 import { getUserByEmail } from "@/lib/supabase";
 import { sendPasswordResetEmail } from "@/lib/supabase-email";
 
+export const dynamic = 'force-dynamic';
+
 // Validation schema for forgot password
 const forgotPasswordSchema = z.object({
   email: z.string().email("Invalid email address"),

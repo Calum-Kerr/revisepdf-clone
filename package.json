@@ -9,7 +9,7 @@
     "start:next": "next start -p $PORT",
     "lint": "bunx biome lint --write && bunx tsc --noEmit",
     "format": "bunx biome format --write",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild": "npm run build && cp -r public .next/standalone/ && cp -r .next/static .next/standalone/.next/"
   },
   "engines": {
     "node": "18.x"

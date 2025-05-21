@@ -4,6 +4,8 @@ import { hash, compare } from "bcryptjs";
 import { auth } from "@/auth";
 import { getUserById, updateUser } from "@/lib/supabase";
 
+export const dynamic = 'force-dynamic';
+
 // Validation schema for profile update
 const updateProfileSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters").optional(),
