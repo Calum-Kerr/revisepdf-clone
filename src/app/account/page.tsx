@@ -16,13 +16,21 @@ export default function AccountPage() {
   const router = useRouter();
 
   // Initialize state for form values
-  const [name, setName] = useState(session?.user?.name || "");
-  const [email, setEmail] = useState(session?.user?.email || "");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
   const [currentPassword, setCurrentPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [message, setMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+
+  // Update form values when session data is available
+  React.useEffect(() => {
+    if (session?.user) {
+      setName(session.user.name || "");
+      setEmail(session.user.email || "");
+    }
+  }, [session]);
 
   // Preference state
   const [emailNotifications, setEmailNotifications] = useState(true);
@@ -30,18 +38,20 @@ export default function AccountPage() {
   const [autoSaveFiles, setAutoSaveFiles] = useState(false);
   const [showWatermark, setShowWatermark] = useState(false);
 
-  // Check if user is authenticated
+  // Handle authentication redirects
+  React.useEffect(() => {
+    if (status === "unauthenticated") {
+      router.push("/auth/login");
+    }
+  }, [status, router]);
+
+  // Show loading state
   if (status === "loading") {
     return (
       <div className="container py-10 text-center">
         <p>Loading...</p>
       </div>
     );
-  }
-
-  if (status === "unauthenticated") {
-    router.push("/auth/login");
-    return null;
   }
 
   const handleProfileUpdate = async (e: React.FormEvent) => {
