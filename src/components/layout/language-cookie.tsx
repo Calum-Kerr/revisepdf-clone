@@ -22,30 +22,34 @@ export function LanguageCookie() {
   };
 
   useEffect(() => {
-    // Only run this effect on the client side
+    // This component only runs on the client side
     if (typeof window === 'undefined') return;
 
-    try {
-      // Get the current locale from the URL
-      const currentLocale = getCurrentLocale();
+    // Get the current locale from the URL
+    const currentLocale = getCurrentLocale();
 
-      // Always set the locale to en-GB for UK users
-      if (currentLocale !== 'en-GB') {
-        // Set localStorage and cookie to en-GB
-        try {
-          localStorage.setItem(LANG_COOKIE_NAME, 'en-GB');
-        } catch (e) {
-          console.error('Failed to set localStorage:', e);
-        }
+    // Always set the locale to en-GB for UK users
+    if (currentLocale !== 'en-GB') {
+      // Set localStorage to en-GB
+      try {
+        localStorage.setItem(LANG_COOKIE_NAME, 'en-GB');
+      } catch (e) {
+        console.error('Failed to set localStorage:', e);
+      }
 
-        // Set cookie to en-GB
+      // Set cookie to en-GB
+      try {
         setCookie(LANG_COOKIE_NAME, 'en-GB', {
           maxAge: COOKIE_MAX_AGE,
           path: '/',
           sameSite: 'lax',
         });
+      } catch (e) {
+        console.error('Failed to set cookie:', e);
+      }
 
-        // Redirect to en-GB only once
+      // Redirect to en-GB only once
+      try {
         if (!sessionStorage.getItem('redirected_to_en_gb') && pathname) {
           // Set a flag to prevent multiple redirects
           sessionStorage.setItem('redirected_to_en_gb', 'true');
@@ -60,10 +64,9 @@ export function LanguageCookie() {
           const newPath = segments.join('/');
           router.push(newPath);
         }
+      } catch (e) {
+        console.error('Failed to redirect:', e);
       }
-    } catch (error) {
-      console.error('Error in LanguageCookie component:', error);
-      // Continue without setting the cookie
     }
   }, [pathname, router]);
 

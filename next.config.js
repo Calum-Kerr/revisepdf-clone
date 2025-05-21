@@ -12,13 +12,9 @@ const nextConfig = {
   output: 'standalone',
   // External packages that need to be transpiled
   serverExternalPackages: ['bcryptjs'],
-  // Disable static generation for problematic routes
-  unstable_excludeServerComponents: true,
   experimental: {
     // Disable static generation for pages with client components
     ppr: false,
-    // Disable suspense bailout warning
-    missingSuspenseWithCSRBailout: false,
   },
   images: {
     domains: [

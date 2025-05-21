@@ -11,21 +11,12 @@ import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { setRequestLocale } from "next-intl/server";
-import dynamic from "next/dynamic";
+import ClientWrapper from "@/components/client-wrapper";
+import LanguageCookie from "@/components/layout/language-cookie";
+import AuthStateRefresher from "@/components/auth/auth-state-refresher";
 
 // Force dynamic rendering for this layout
-export const dynamic = 'force-dynamic';
-
-// Dynamically import client components with SSR disabled
-const LanguageCookie = dynamic(
-  () => import("@/components/layout/language-cookie"),
-  { ssr: false }
-);
-
-const AuthStateRefresher = dynamic(
-  () => import("@/components/auth/auth-state-refresher"),
-  { ssr: false }
-);
+export const dynamicParams = true;
 
 // Define Inter font
 const inter = Inter({
@@ -204,15 +195,11 @@ export default async function LocaleLayout({ children, params }: Props) {
           <AuthProvider>
             <NextIntlClientProvider>
               <div className="min-h-screen flex flex-col">
-                {/* Wrap client components in a client-side only boundary */}
-                {typeof window !== 'undefined' && (
-                  <>
-                    {/* Save language preference in cookies */}
-                    <LanguageCookie />
-                    {/* Add the AuthStateRefresher component to force refresh of auth state */}
-                    <AuthStateRefresher />
-                  </>
-                )}
+                {/* Client components wrapped to prevent SSR issues */}
+                <ClientWrapper>
+                  <LanguageCookie />
+                  <AuthStateRefresher />
+                </ClientWrapper>
                 <Navbar />
                 <div className="flex-grow">
                   <ClientBody>{children}</ClientBody>
