@@ -9,6 +9,10 @@ const nextConfig = {
   // Improve static generation
   staticPageGenerationTimeout: 180, // Increase timeout for static page generation (in seconds)
   output: 'standalone', // Optimize for production deployment
+  experimental: {
+    // Improve static generation with suspense
+    missingSuspenseWithCSRBailout: false,
+  },
   images: {
     domains: [
       'www.revisepdf.com',
