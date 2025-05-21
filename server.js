@@ -22,6 +22,12 @@ console.log('Node version:', process.version);
 console.log('Environment:', process.env.NODE_ENV);
 console.log('Current directory:', process.cwd());
 
+// Check Node.js version
+const requiredNodeVersion = '18.20.8';
+if (process.version !== `v${requiredNodeVersion}`) {
+  console.warn(`Warning: Required Node.js version is ${requiredNodeVersion}, but found ${process.version}`);
+}
+
 // Add global error handler
 process.on('uncaughtException', (error) => {
   console.error('Uncaught Exception:', error);

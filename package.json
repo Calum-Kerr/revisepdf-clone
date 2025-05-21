@@ -9,10 +9,11 @@
     "start:next": "next start -p $PORT",
     "lint": "bunx biome lint --write && bunx tsc --noEmit",
     "format": "bunx biome format --write",
-    "heroku-postbuild": "NODE_OPTIONS='--max_old_space_size=4096' npm run build && cp -r public .next/standalone/ && cp -r .next/static .next/standalone/.next/"
+    "heroku-postbuild": "NODE_OPTIONS='--max_old_space_size=4096' npm run build && cp -r public .next/standalone/ && cp -r .next/static .next/standalone/.next/",
+    "check-node-version": "node -e \"if(process.versions.node !== '18.20.8') { console.error('Required Node.js version is 18.20.8, but found ' + process.versions.node); process.exit(1); }\""
   },
   "engines": {
-    "node": "18.x"
+    "node": "18.20.8"
   },
   "cacheDirectories": [
     ".next/cache"
