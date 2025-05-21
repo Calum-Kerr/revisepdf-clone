@@ -1,7 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
-import { useSession } from "next-auth/react";
+import React, { useState, Suspense } from "react";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -10,13 +9,52 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { User, Mail, Lock, ShieldCheck, Settings, Bell } from "lucide-react";
 import { Switch } from "@/components/ui/switch";
+import { useMockSession } from "@/providers/auth-provider";
 
 // Force dynamic rendering to prevent prerendering errors
 export const dynamic = 'force-dynamic';
 
-export default function AccountPage() {
+// Separate component that safely uses useSession
+function AccountWithSession({
+  setName,
+  setEmail,
+  setStatus
+}: {
+  setName: (name: string) => void,
+  setEmail: (email: string) => void,
+  setStatus: (status: "loading" | "authenticated" | "unauthenticated") => void
+}) {
+  // Import useSession inside the component
+  const { useSession } = require("next-auth/react");
   const { data: session, status } = useSession();
   const router = useRouter();
+
+  // Handle authentication redirects
+  React.useEffect(() => {
+    setStatus(status);
+    if (status === "unauthenticated") {
+      router.push("/auth/login");
+    }
+  }, [status, router, setStatus]);
+
+  // Update form values when session data is available
+  React.useEffect(() => {
+    if (session?.user) {
+      setName(session.user.name || "");
+      setEmail(session.user.email || "");
+    }
+  }, [session, setName, setEmail]);
+
+  return null; // This component doesn't render anything
+}
+
+export default function AccountPage() {
+  const router = useRouter();
+  const mockSession = useMockSession();
+  const isDemoMode = process.env.NEXTAUTH_DEMO_MODE === "true";
+
+  // State for authentication status
+  const [status, setStatus] = useState<"loading" | "authenticated" | "unauthenticated">("loading");
 
   // Initialize state for form values
   const [name, setName] = useState("");
@@ -27,26 +65,20 @@ export default function AccountPage() {
   const [message, setMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
-  // Update form values when session data is available
-  React.useEffect(() => {
-    if (session?.user) {
-      setName(session.user.name || "");
-      setEmail(session.user.email || "");
-    }
-  }, [session]);
-
   // Preference state
   const [emailNotifications, setEmailNotifications] = useState(true);
   const [promptBeforeDelete, setPromptBeforeDelete] = useState(true);
   const [autoSaveFiles, setAutoSaveFiles] = useState(false);
   const [showWatermark, setShowWatermark] = useState(false);
 
-  // Handle authentication redirects
+  // For demo mode, set mock data
   React.useEffect(() => {
-    if (status === "unauthenticated") {
-      router.push("/auth/login");
+    if (isDemoMode) {
+      setName("Demo User");
+      setEmail("user@example.com");
+      setStatus("authenticated");
     }
-  }, [status, router]);
+  }, [isDemoMode, setName, setEmail]);
 
   // Show loading state
   if (status === "loading") {
@@ -132,6 +164,15 @@ export default function AccountPage() {
 
   return (
     <div className="container py-6 md:py-10 px-4">
+      {/* Wrap the component that uses useSession in Suspense */}
+      <Suspense fallback={null}>
+        <AccountWithSession
+          setName={setName}
+          setEmail={setEmail}
+          setStatus={setStatus}
+        />
+      </Suspense>
+
       <h1 className="text-2xl md:text-3xl font-bold mb-6">Account Settings</h1>
 
       {message && (
