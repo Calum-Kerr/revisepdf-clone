@@ -215,17 +215,20 @@ export default function ProfilePage({ params }: PageProps) {
   // Get translations using simple function instead of next-intl
   const t = useSimpleTranslations('profile', locale);
 
+  // Handle authentication redirects
+  React.useEffect(() => {
+    if (status === "unauthenticated") {
+      router.push(`/${locale}/auth/login`);
+    }
+  }, [status, router, locale]);
+
+  // Show loading state
   if (status === "loading") {
     return (
       <div className="container py-10 text-center">
         <p>Loading...</p>
       </div>
     );
-  }
-
-  if (status === "unauthenticated") {
-    router.push(`/${locale}/auth/login`);
-    return null;
   }
 
   const userName = session?.user?.name || "User";
