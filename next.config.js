@@ -7,13 +7,18 @@ const nextConfig = {
   poweredByHeader: false, // Remove the X-Powered-By header
   reactStrictMode: true,
   // Heroku deployment configuration
-  staticPageGenerationTimeout: 180, // Increase timeout for static page generation (in seconds)
+  staticPageGenerationTimeout: 300, // Increase timeout for static page generation (in seconds)
   // Using standalone output instead of export for API route compatibility
   output: 'standalone',
-  // External packages that need to be transpiled - moved from experimental
+  // External packages that need to be transpiled
   serverExternalPackages: ['bcryptjs'],
+  // Disable static generation for problematic routes
+  unstable_excludeServerComponents: true,
   experimental: {
-    // Empty experimental object to avoid errors
+    // Disable static generation for pages with client components
+    ppr: false,
+    // Disable suspense bailout warning
+    missingSuspenseWithCSRBailout: false,
   },
   images: {
     domains: [

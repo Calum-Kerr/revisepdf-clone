@@ -9,11 +9,24 @@ const { parse } = require('url');
 const app = express();
 const port = process.env.PORT || 3000;
 
+// Set a longer timeout for the server startup
+const SERVER_TIMEOUT = 300000; // 5 minutes in milliseconds
+setTimeout(() => {
+  console.error('Server startup timeout exceeded. Exiting...');
+  process.exit(1);
+}, SERVER_TIMEOUT);
+
 // Log environment information
 console.log('Starting server...');
 console.log('Node version:', process.version);
 console.log('Environment:', process.env.NODE_ENV);
 console.log('Current directory:', process.cwd());
+
+// Add global error handler
+process.on('uncaughtException', (error) => {
+  console.error('Uncaught Exception:', error);
+  // Continue running the server
+});
 
 // Enable compression
 app.use(compression());

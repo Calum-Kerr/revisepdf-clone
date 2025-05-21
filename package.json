@@ -4,12 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev -H 0.0.0.0 --turbopack",
-    "build": "next build",
+    "build": "NODE_OPTIONS='--max_old_space_size=4096' next build",
     "start": "node server.js",
     "start:next": "next start -p $PORT",
     "lint": "bunx biome lint --write && bunx tsc --noEmit",
     "format": "bunx biome format --write",
-    "heroku-postbuild": "npm run build && cp -r public .next/standalone/ && cp -r .next/static .next/standalone/.next/"
+    "heroku-postbuild": "NODE_OPTIONS='--max_old_space_size=4096' npm run build && cp -r public .next/standalone/ && cp -r .next/static .next/standalone/.next/"
   },
   "engines": {
     "node": "18.x"

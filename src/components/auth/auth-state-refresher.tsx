@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useSession } from "next-auth/react";
 import { useMockSession } from "@/providers/auth-provider";
 
 /**
@@ -11,17 +10,23 @@ import { useMockSession } from "@/providers/auth-provider";
  */
 export default function AuthStateRefresher() {
   const [refreshCount, setRefreshCount] = useState(0);
-  const { data: session, status, update } = useSession();
   const mockSession = useMockSession();
   const isDemoMode = process.env.NEXTAUTH_DEMO_MODE === "true";
 
+  // Safely import useSession only on the client side
+  const { useSession } = require("next-auth/react");
+  const { update } = useSession ? useSession() : { update: () => Promise.resolve() };
+
   // Force a refresh of the authentication state every second
   useEffect(() => {
+    // Only run this effect on the client side
+    if (typeof window === 'undefined') return;
+
     const interval = setInterval(() => {
       setRefreshCount((prev) => prev + 1);
 
       // Force a refresh of the session
-      if (!isDemoMode) {
+      if (!isDemoMode && update) {
         // Force a refresh of the real session
         update();
       }

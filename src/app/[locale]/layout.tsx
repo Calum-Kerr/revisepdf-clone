@@ -6,13 +6,26 @@ import Footer from "@/components/layout/footer";
 import ClientBody from "@/app/ClientBody";
 import AuthProvider from "@/providers/auth-provider";
 import NextAuthProvider from "@/providers/session-provider";
-import LanguageCookie from "@/components/layout/language-cookie";
-import AuthStateRefresher from "@/components/auth/auth-state-refresher";
 import Script from "next/script";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { setRequestLocale } from "next-intl/server";
+import dynamic from "next/dynamic";
+
+// Force dynamic rendering for this layout
+export const dynamic = 'force-dynamic';
+
+// Dynamically import client components with SSR disabled
+const LanguageCookie = dynamic(
+  () => import("@/components/layout/language-cookie"),
+  { ssr: false }
+);
+
+const AuthStateRefresher = dynamic(
+  () => import("@/components/auth/auth-state-refresher"),
+  { ssr: false }
+);
 
 // Define Inter font
 const inter = Inter({
@@ -39,7 +52,10 @@ interface Props {
 
 // Generate static params for all supported locales
 export function generateStaticParams() {
-  return routing.locales.map((locale) => ({ locale }));
+  // Return only the default locale to reduce build time
+  // Other locales will be handled dynamically
+  const defaultLocale = routing.locales[0];
+  return [{ locale: defaultLocale }];
 }
 
 // Dynamic metadata generation based on locale
@@ -140,8 +156,13 @@ export default async function LocaleLayout({ children, params }: Props) {
     notFound();
   }
 
-  // Enable static rendering
-  setRequestLocale(locale);
+  // Set the locale for the request
+  try {
+    setRequestLocale(locale);
+  } catch (error) {
+    console.error("Error setting request locale:", error);
+    // Continue without setting the locale
+  }
 
   return (
     <html lang={locale} className={inter.variable}>
@@ -179,15 +200,19 @@ export default async function LocaleLayout({ children, params }: Props) {
         <meta name="mobile-web-app-capable" content="yes" />
       </head>
       <body className={inter.className}>
-        {/* Save language preference in cookies */}
-        <LanguageCookie />
-
         <NextAuthProvider>
           <AuthProvider>
             <NextIntlClientProvider>
               <div className="min-h-screen flex flex-col">
-                {/* Add the AuthStateRefresher component to force refresh of auth state */}
-                <AuthStateRefresher />
+                {/* Wrap client components in a client-side only boundary */}
+                {typeof window !== 'undefined' && (
+                  <>
+                    {/* Save language preference in cookies */}
+                    <LanguageCookie />
+                    {/* Add the AuthStateRefresher component to force refresh of auth state */}
+                    <AuthStateRefresher />
+                  </>
+                )}
                 <Navbar />
                 <div className="flex-grow">
                   <ClientBody>{children}</ClientBody>

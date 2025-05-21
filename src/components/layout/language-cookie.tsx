@@ -22,44 +22,50 @@ export function LanguageCookie() {
   };
 
   useEffect(() => {
-    // Get the current locale from the URL
-    const currentLocale = getCurrentLocale();
+    // Only run this effect on the client side
+    if (typeof window === 'undefined') return;
 
-    // Always set the locale to en-GB for UK users
-    if (currentLocale !== 'en-GB') {
-      // Set localStorage and cookie to en-GB
-      try {
-        if (typeof window !== 'undefined') {
+    try {
+      // Get the current locale from the URL
+      const currentLocale = getCurrentLocale();
+
+      // Always set the locale to en-GB for UK users
+      if (currentLocale !== 'en-GB') {
+        // Set localStorage and cookie to en-GB
+        try {
           localStorage.setItem(LANG_COOKIE_NAME, 'en-GB');
+        } catch (e) {
+          console.error('Failed to set localStorage:', e);
         }
-      } catch (e) {
-        console.error('Failed to set localStorage:', e);
-      }
 
-      // Set cookie to en-GB
-      setCookie(LANG_COOKIE_NAME, 'en-GB', {
-        maxAge: COOKIE_MAX_AGE,
-        path: '/',
-        sameSite: 'lax',
-      });
+        // Set cookie to en-GB
+        setCookie(LANG_COOKIE_NAME, 'en-GB', {
+          maxAge: COOKIE_MAX_AGE,
+          path: '/',
+          sameSite: 'lax',
+        });
 
-      // Redirect to en-GB only once
-      if (!sessionStorage.getItem('redirected_to_en_gb') && pathname) {
-        // Set a flag to prevent multiple redirects
-        sessionStorage.setItem('redirected_to_en_gb', 'true');
+        // Redirect to en-GB only once
+        if (!sessionStorage.getItem('redirected_to_en_gb') && pathname) {
+          // Set a flag to prevent multiple redirects
+          sessionStorage.setItem('redirected_to_en_gb', 'true');
 
-        // Replace the locale segment in the path
-        const segments = pathname.split('/');
-        if (segments.length > 1 && locales.includes(segments[1])) {
-          segments[1] = 'en-GB';
-        } else {
-          segments.splice(1, 0, 'en-GB');
+          // Replace the locale segment in the path
+          const segments = pathname.split('/');
+          if (segments.length > 1 && locales.includes(segments[1])) {
+            segments[1] = 'en-GB';
+          } else {
+            segments.splice(1, 0, 'en-GB');
+          }
+          const newPath = segments.join('/');
+          router.push(newPath);
         }
-        const newPath = segments.join('/');
-        router.push(newPath);
       }
+    } catch (error) {
+      console.error('Error in LanguageCookie component:', error);
+      // Continue without setting the cookie
     }
-  }, [pathname]);
+  }, [pathname, router]);
 
   // This component doesn't render anything
   return null;
