@@ -10,11 +10,19 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { User, Mail, Lock, ShieldCheck, Settings, Bell } from "lucide-react";
 import { Switch } from "@/components/ui/switch";
+import { Metadata } from "next";
 
 // Force dynamic rendering to prevent prerendering errors
 export const dynamic = 'force-dynamic';
 
-export default function AccountPage() {
+interface PageProps {
+  params: {
+    locale: string;
+  };
+}
+
+export default function AccountPage({ params }: PageProps) {
+  const { locale } = params;
   const { data: session, status } = useSession();
   const router = useRouter();
 
@@ -44,9 +52,9 @@ export default function AccountPage() {
   // Handle authentication redirects
   React.useEffect(() => {
     if (status === "unauthenticated") {
-      router.push("/auth/login");
+      router.push(`/${locale}/auth/login`);
     }
-  }, [status, router]);
+  }, [status, router, locale]);
 
   // Show loading state
   if (status === "loading") {
@@ -63,50 +71,65 @@ export default function AccountPage() {
     setMessage("");
 
     try {
+      // Validate form
+      if (!name.trim()) {
+        throw new Error("Name is required");
+      }
+
+      if (!email.trim()) {
+        throw new Error("Email is required");
+      }
+
       // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 1000));
 
       // Show success message
       setMessage("Profile updated successfully");
       setIsLoading(false);
-    } catch (error) {
+    } catch (error: any) {
       console.error("Profile update error:", error);
-      setMessage("Error updating profile");
+      setMessage(error.message || "Error updating profile");
       setIsLoading(false);
     }
   };
 
-  const handlePasswordUpdate = async (e: React.FormEvent) => {
+  const handleSecurityUpdate = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
     setMessage("");
 
-    // Validate passwords
-    if (newPassword !== confirmPassword) {
-      setMessage("New passwords do not match");
-      setIsLoading(false);
-      return;
-    }
-
-    if (newPassword.length < 8) {
-      setMessage("Password must be at least 8 characters long");
-      setIsLoading(false);
-      return;
-    }
-
     try {
+      // Validate form
+      if (!currentPassword) {
+        throw new Error("Current password is required");
+      }
+
+      if (!newPassword) {
+        throw new Error("New password is required");
+      }
+
+      if (newPassword !== confirmPassword) {
+        throw new Error("Passwords do not match");
+      }
+
+      if (newPassword.length < 8) {
+        throw new Error("Password must be at least 8 characters");
+      }
+
       // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 1000));
 
-      // Reset password fields and show success message
+      // Clear form
       setCurrentPassword("");
       setNewPassword("");
       setConfirmPassword("");
+
+      // Show success message
       setMessage("Password updated successfully");
       setIsLoading(false);
-    } catch (error) {
-      console.error("Password update error:", error);
-      setMessage("Error updating password");
+    } catch (error: any) {
+      console.error("Security update error:", error);
+      setMessage(error.message || "Error updating security settings");
       setIsLoading(false);
     }
   };
@@ -228,7 +251,7 @@ export default function AccountPage() {
                 </div>
               </div>
 
-              <form onSubmit={handlePasswordUpdate} className="space-y-4">
+              <form onSubmit={handleSecurityUpdate} className="space-y-4">
                 <div className="space-y-2">
                   <Label htmlFor="currentPassword" className="flex items-center text-sm md:text-base">
                     <Lock className="h-3.5 w-3.5 mr-2 text-gray-500" />
@@ -239,8 +262,7 @@ export default function AccountPage() {
                     type="password"
                     value={currentPassword}
                     onChange={(e) => setCurrentPassword(e.target.value)}
-                    placeholder="Enter current password"
-                    required
+                    placeholder="Enter your current password"
                     className="text-sm md:text-base"
                   />
                 </div>
@@ -254,12 +276,11 @@ export default function AccountPage() {
                     type="password"
                     value={newPassword}
                     onChange={(e) => setNewPassword(e.target.value)}
-                    placeholder="Enter new password"
-                    required
+                    placeholder="Enter your new password"
                     className="text-sm md:text-base"
                   />
                   <p className="text-xs text-gray-500 mt-1">
-                    Password must be at least 8 characters long
+                    Password must be at least 8 characters long.
                   </p>
                 </div>
                 <div className="space-y-2">
@@ -272,8 +293,7 @@ export default function AccountPage() {
                     type="password"
                     value={confirmPassword}
                     onChange={(e) => setConfirmPassword(e.target.value)}
-                    placeholder="Confirm new password"
-                    required
+                    placeholder="Confirm your new password"
                     className="text-sm md:text-base"
                   />
                 </div>
@@ -323,9 +343,9 @@ export default function AccountPage() {
 
                   <div className="flex items-center justify-between">
                     <div className="space-y-0.5">
-                      <Label className="text-sm md:text-base">Confirm Before Delete</Label>
+                      <Label className="text-sm md:text-base">Prompt Before Delete</Label>
                       <p className="text-xs text-gray-500">
-                        Show a confirmation dialog before deleting files
+                        Show confirmation dialog before deleting files
                       </p>
                     </div>
                     <Switch
@@ -338,7 +358,7 @@ export default function AccountPage() {
                     <div className="space-y-0.5">
                       <Label className="text-sm md:text-base">Auto-Save Files</Label>
                       <p className="text-xs text-gray-500">
-                        Automatically save files to your account
+                        Automatically save processed files to your account
                       </p>
                     </div>
                     <Switch
@@ -351,7 +371,7 @@ export default function AccountPage() {
                     <div className="space-y-0.5">
                       <Label className="text-sm md:text-base">Show Watermark</Label>
                       <p className="text-xs text-gray-500">
-                        Add a watermark to processed PDFs (free accounts only)
+                        Display RevisePDF watermark on processed files
                       </p>
                     </div>
                     <Switch
