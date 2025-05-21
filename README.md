@@ -18,7 +18,7 @@ A comprehensive authentication system for the RevisePDF application, built with 
 - **Frontend**: Next.js, React, Tailwind CSS, shadcn/ui
 - **Authentication**: NextAuth.js
 - **Database**: Supabase
-- **Email**: Nodemailer
+- **Email**: Supabase Email Service
 - **Localisation**: next-intl
 
 ## Getting Started
@@ -63,13 +63,9 @@ GOOGLE_CLIENT_SECRET=your-google-client-secret
 NEXT_PUBLIC_SUPABASE_URL=your-supabase-url
 SUPABASE_SERVICE_KEY=your-supabase-service-key
 
-# Email Service Configuration
-EMAIL_SERVER_HOST=smtp.example.com
-EMAIL_SERVER_PORT=587
-EMAIL_SERVER_USER=your-email-username
-EMAIL_SERVER_PASSWORD=your-email-password
-EMAIL_SERVER_SECURE=false
+# Email Configuration
 EMAIL_FROM=noreply@revisepdf.com
+# Note: Email sending is handled by Supabase - no additional SMTP configuration needed
 
 # Locale Configuration
 NEXT_PUBLIC_DEFAULT_LOCALE=en-GB

@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 import { getUserByEmail } from "@/lib/supabase";
-import { sendPasswordResetEmail } from "@/lib/email";
+import { sendPasswordResetEmail } from "@/lib/supabase-email";
 
 // Validation schema for forgot password
 const forgotPasswordSchema = z.object({
@@ -12,7 +12,7 @@ const forgotPasswordSchema = z.object({
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    
+
     // Validate input
     const result = forgotPasswordSchema.safeParse(body);
     if (!result.success) {
@@ -21,30 +21,30 @@ export async function POST(req: NextRequest) {
         { status: 400 }
       );
     }
-    
+
     const { email, locale } = result.data;
-    
+
     // Check if user exists
     const user = await getUserByEmail(email);
-    
+
     // Always return success even if user doesn't exist for security reasons
     if (!user) {
       return NextResponse.json(
-        { 
-          success: true, 
-          message: "If your email is registered, you will receive a password reset link." 
+        {
+          success: true,
+          message: "If your email is registered, you will receive a password reset link."
         },
         { status: 200 }
       );
     }
-    
+
     // Send password reset email
     await sendPasswordResetEmail(email, locale);
-    
+
     return NextResponse.json(
-      { 
-        success: true, 
-        message: "If your email is registered, you will receive a password reset link." 
+      {
+        success: true,
+        message: "If your email is registered, you will receive a password reset link."
       },
       { status: 200 }
     );

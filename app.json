@@ -31,20 +31,8 @@
     "GOOGLE_CLIENT_SECRET": {
       "description": "Google OAuth client secret"
     },
-    "EMAIL_SERVER_HOST": {
-      "description": "SMTP server host"
-    },
-    "EMAIL_SERVER_PORT": {
-      "description": "SMTP server port"
-    },
-    "EMAIL_SERVER_USER": {
-      "description": "SMTP server username"
-    },
-    "EMAIL_SERVER_PASSWORD": {
-      "description": "SMTP server password"
-    },
     "EMAIL_FROM": {
-      "description": "Email sender address"
+      "description": "Email sender address (used by Supabase email service)"
     },
     "NEXT_PUBLIC_DEFAULT_LOCALE": {
       "description": "Default locale",
