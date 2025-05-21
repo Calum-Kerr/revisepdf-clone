@@ -6,9 +6,10 @@ const withNextIntl = createNextIntlPlugin();
 const nextConfig = {
   poweredByHeader: false, // Remove the X-Powered-By header
   reactStrictMode: true,
-  // Improve static generation
+  // Heroku deployment configuration
   staticPageGenerationTimeout: 180, // Increase timeout for static page generation (in seconds)
-  // Remove standalone output for Heroku compatibility
+  output: 'export', // Generate static HTML files for better Heroku compatibility
+  distDir: 'out', // Output directory for static files
   experimental: {
     // Improve static generation with suspense
     missingSuspenseWithCSRBailout: false,
